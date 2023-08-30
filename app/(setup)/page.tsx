@@ -1,18 +1,12 @@
+import InitialModal from "@/components/modals/InitialModal";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initialProfile";
+import { DBprofile } from "@/lib/types";
 import { redirect } from "next/navigation";
 
 const page = async () => {
-  const profile: {
-    id: string;
-    userId: string;
-    name: string;
-    imageUrl: string;
-    email: string;
-    createdAt: Date;
-    updatedAt: Date;
-  } | null = await initialProfile();
-  
+  const profile: DBprofile = await initialProfile();
+
   const server = await db.server.findFirst({
     where: {
       Members: {
@@ -23,10 +17,10 @@ const page = async () => {
     },
   });
 
-  if(server){
-    return redirect(`/servers/${server.id}`)
+  if (server) {
+    return redirect(`/servers/${server.id}`);
   }
-  return <div>page</div>;
+  return <InitialModal />;
 };
 
 export default page;

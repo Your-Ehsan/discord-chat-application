@@ -16,6 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    // TODO: Use a Theme Toggling Button
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
