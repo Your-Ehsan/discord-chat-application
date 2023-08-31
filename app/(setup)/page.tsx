@@ -1,4 +1,4 @@
-import InitialModal from "@/components/modals/InitialModal";
+import InitialCreateServerModal from "@/components/modals/InitialCreateServerModal";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initialProfile";
 import { DBprofile } from "@/lib/types";
@@ -20,7 +20,7 @@ const page = async () => {
   if (server) {
     return redirect(`/servers/${server.id}`);
   }
-  return <InitialModal />;
+  return <InitialCreateServerModal/>
 };
 
 export default page;

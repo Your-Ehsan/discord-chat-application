@@ -1,7 +1,6 @@
 "use client";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import FileUpload from "@/components/FileUpload";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +8,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "../ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -18,21 +17,24 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import { Input } from "../ui/input";
-import { initialModalformValuesTypes } from "@/lib/types";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { initialModalformSchema } from "@/lib/schemas";
-import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
-import FileUpload from "../FileUpload";
+import { initialModalformValuesTypes } from "@/lib/types";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
-const InitialModal = () => {
-  const [Ismounted, setIsmounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsmounted(true);
-  }, []);
-
+const CreateServerModalContent = ({
+  isOpen,
+  allowedClose,
+  onClose,
+}: {
+  onClose?: () => void;
+  allowedClose: boolean;
+  isOpen: boolean;
+}) => {
   const form = useForm<initialModalformValuesTypes>({
     //@ts-ignore
     resolver: zodResolver(initialModalformSchema),
@@ -41,16 +43,40 @@ const InitialModal = () => {
       imageUrl: "",
     },
   });
-
+  const Router = useRouter();
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: initialModalformValuesTypes) => {
     console.log(values);
+    try {
+      await axios
+        .post("/api/servers", values)
+        .then(() => {
+          form.reset();
+          Router.refresh();
+          if (onClose) {
+            onClose();
+          }
+          console.log("server created successfully");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(`Getting Error while creating server ${error}`);
+    }
   };
 
-  // if (!Ismounted) return null;
   return (
-    <Dialog open={Ismounted}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={() => {
+        if (allowedClose && onClose) {
+          form.reset();
+          onClose();
+        }
+      }}
+    >
       <DialogContent className="p-8 overflow-hidden">
         {/* Dilaof Header */}
         <DialogHeader className="pt-8 px-6">
@@ -74,7 +100,9 @@ const InitialModal = () => {
                   name="imageUrl"
                   render={({ field }) => {
                     return (
-                      <FormItem>
+                      <FormItem
+                        className={"flex justify-center items-center flex-col"}
+                      >
                         <FormLabel className="uppercase text-xs font-bold text-zinc-400">
                           {/* label for image upload section */}
                           Upload Image
@@ -123,7 +151,7 @@ const InitialModal = () => {
             </div>
             <DialogFooter className="px-6 py-4">
               <Button disabled={isLoading} className="" variant={"primary"}>
-                Create
+                {isLoading ? "Creating.." : "Create"}
               </Button>
             </DialogFooter>
           </form>
@@ -133,4 +161,4 @@ const InitialModal = () => {
   );
 };
 
-export default InitialModal;
+export default CreateServerModalContent;

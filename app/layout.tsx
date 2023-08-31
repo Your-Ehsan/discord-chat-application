@@ -4,6 +4,7 @@ import { font, siteConfigs } from "@/constants/siteConfigs";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
+import ModalsProvider from "@/components/providers/ModalsProvider";
 
 export const metadata: Metadata = {
   title: siteConfigs.title,
@@ -26,6 +27,7 @@ export default function RootLayout({
             storageKey="discord-theme"
             enableSystem
           >
+            <ModalsProvider />
             {children}
           </ThemeProvider>
         </body>
