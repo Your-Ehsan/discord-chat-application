@@ -1,13 +1,14 @@
 import currentProfile from "@/lib/currentProfile";
 import { db } from "@/lib/db";
+import { serverModalformValuesTypes } from "@/lib/types";
 import { MemberRole } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { v4 } from "uuid";
 
- const POST = async (req: Request) => {
+const POST = async (req: Request) => {
   try {
     const profile = await currentProfile(),
-      { name, imageUrl } = await req.json();
+      { name, imageUrl }: serverModalformValuesTypes = await req.json();
 
     if (!profile) return new NextResponse("Unauthorized", { status: 402 });
 
@@ -43,4 +44,4 @@ import { v4 } from "uuid";
   }
 };
 
-export {POST}
+export { POST };

@@ -1,14 +1,15 @@
 import currentProfile from "@/lib/currentProfile";
 import { db } from "@/lib/db";
+import { serverModalformValuesTypes } from "@/lib/types";
 import { NextResponse } from "next/server";
-import { v4 } from "uuid";
 
 const PATCH = async (
   req: Request,
   { params }: { params: { serverId: string } },
 ) => {
   try {
-    const profile = await currentProfile();
+    const profile = await currentProfile(),
+      { imageUrl, name }: serverModalformValuesTypes = await req.json();
 
     if (!profile) return new NextResponse("unAuthorized", { status: 402 });
 
@@ -21,13 +22,14 @@ const PATCH = async (
         profileId: profile.id,
       },
       data: {
-        inviteCode: v4(),
+        name: name,
+        imageUrl: imageUrl,
       },
     });
 
     return NextResponse.json(server);
   } catch (error) {
-    console.log(`Error while creating new invite link --> ${error}`);
+    console.log(`Error while updating new server --> ${error}`);
   }
 };
 

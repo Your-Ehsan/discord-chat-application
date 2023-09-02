@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { ServerWithMembers_ProfilesTypes } from "@/lib/types";
 import { MemberRole } from "@prisma/client";
 import {
@@ -9,7 +9,6 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import {
-  BoxIcon,
   ChevronDownIcon,
   CodeSandboxLogoIcon,
   PlusCircledIcon,
@@ -26,7 +25,6 @@ type ServerHeaderProps = {
 };
 
 const ServerHeader = ({ server, role }: ServerHeaderProps) => {
-
   const isAdmin: boolean = role === MemberRole.ADMIN,
     isModerator: boolean = isAdmin || role === MemberRole.MODERATOR;
 
@@ -54,7 +52,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isAdmin && (
           <DropdownMenuItem
-            // onClick={() => onOpen("editServer", { server })}
+            onClick={() => onOpen("editServer", { server })}
             className="px-3 py-2 text-sm cursor-pointer"
           >
             Server Settings
@@ -63,7 +61,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isAdmin && (
           <DropdownMenuItem
-            // onClick={() => onOpen("members", { server })}
+            onClick={() => onOpen("members", { server })}
             className="px-3 py-2 text-sm cursor-pointer"
           >
             Manage Members
@@ -72,7 +70,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isModerator && (
           <DropdownMenuItem
-            // onClick={() => onOpen("createChannel")}
+            onClick={() => onOpen("createChannel", { server: server })}
             className="px-3 py-2 text-sm cursor-pointer"
           >
             Create Channel
@@ -82,7 +80,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         {isModerator && <DropdownMenuSeparator />}
         {isAdmin && (
           <DropdownMenuItem
-            // onClick={() => onOpen("deleteServer", { server })}
+            onClick={() => onOpen("deleteServer", { server })}
             className="text-rose-400 px-3 py-2 text-sm cursor-pointer"
           >
             Delete Server
@@ -91,7 +89,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {!isAdmin && (
           <DropdownMenuItem
-            // onClick={() => onOpen("leaveServer", { server })}
+            onClick={() => onOpen("leaveServer", { server: server })}
             className="text-rose-400 px-3 py-2 text-sm cursor-pointer"
           >
             Leave Server

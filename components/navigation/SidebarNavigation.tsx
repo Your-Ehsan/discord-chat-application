@@ -1,11 +1,11 @@
 import currentProfile from "@/lib/currentProfile";
-import SidebarNavigationAction from "./SidebarNavigationAction";
-import SidebarNavigationItems from "./SidebarNavigationItems";
+import SidebarNavigationAction from "@/components/navigation/SidebarNavigationAction";
+import SidebarNavigationItems from "@/components/navigation/SidebarNavigationItems";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import { Separator } from "../ui/separator";
-import { ScrollArea } from "../ui/scroll-area";
-import { ThemeToggle } from "../ThemeToggle";
+import { Separator } from "@/components/ui/separator";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { UserButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
@@ -49,8 +49,6 @@ const SidebarNavigation = async () => {
 
         <UserButton
           afterSignOutUrl="/"
-          userProfileMode="modal"
-          defaultOpen={false}
           appearance={{
             userProfile: {
               baseTheme: dark, // this is hard coded :(

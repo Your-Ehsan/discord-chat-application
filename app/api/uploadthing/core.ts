@@ -1,4 +1,3 @@
-import { auth } from "@clerk/nextjs";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { handleAuth } from "./middleware";
 

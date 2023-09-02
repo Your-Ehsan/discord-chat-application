@@ -12,61 +12,31 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { initialModalformSchema } from "@/lib/schemas";
-import { initialModalformValuesTypes } from "@/lib/types";
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
+import { ModalType, ServerFormType } from "@/lib/types";
 
-const CreateServerModalContent = ({
+const ServerModalContent = ({
   isOpen,
   allowedClose,
   onClose,
+  form,
+  isLoading,
+  type,
+  formSubmit,
 }: {
   onClose?: () => void;
   allowedClose: boolean;
   isOpen: boolean;
+  form: ServerFormType;
+  isLoading: boolean;
+  type: ModalType;
+  formSubmit: () => Promise<void>;
 }) => {
-  const form = useForm<initialModalformValuesTypes>({
-    //@ts-ignore
-    resolver: zodResolver(initialModalformSchema),
-    defaultValues: {
-      name: "",
-      imageUrl: "",
-    },
-  });
-  const Router = useRouter();
-  const isLoading = form.formState.isSubmitting;
-
-  const onSubmit = async (values: initialModalformValuesTypes) => {
-    console.log(values);
-    try {
-      await axios
-        .post("/api/servers", values)
-        .then(() => {
-          form.reset();
-          Router.refresh();
-          if (onClose) {
-            onClose();
-          }
-          console.log("server created successfully");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(`Getting Error while creating server ${error}`);
-    }
-  };
-
   return (
     <Dialog
       open={isOpen}
@@ -78,21 +48,19 @@ const CreateServerModalContent = ({
       }}
     >
       <DialogContent className="p-8 overflow-hidden">
-        {/* Dilaof Header */}
         <DialogHeader className="pt-8 px-6">
-          {/* Title */}
-          <DialogTitle className="text-2xl text-center">
-            customize your server
+          <DialogTitle className="text-3xl capitalize">
+            {type === "createServer"
+              ? "Create a New server"
+              : type === "editServer" && "Customize your server"}
           </DialogTitle>
-          {/* Description */}
           <DialogDescription className="text-zinc-500">
             Give your server a personality with a name and an image. you can
             always change it later.
           </DialogDescription>
         </DialogHeader>
-        {/* Form component */}
         <Form {...form}>
-          <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+          <form className="space-y-8" onSubmit={formSubmit}>
             <div className="space-y-8 px-6">
               <div className="flex items-center justify-center text-center">
                 <FormField
@@ -103,15 +71,6 @@ const CreateServerModalContent = ({
                       <FormItem
                         className={"flex justify-center items-center flex-col"}
                       >
-                        <FormLabel className="uppercase text-xs font-bold text-zinc-400">
-                          {/* label for image upload section */}
-                          Upload Image
-                        </FormLabel>
-                        {/* Form description */}
-                        <FormDescription>
-                          This is description of file upload section
-                        </FormDescription>
-                        {/* form control section */}
                         <FormControl>
                           <FileUpload
                             endpoint={"serverImage"}
@@ -119,7 +78,6 @@ const CreateServerModalContent = ({
                             value={field.value}
                           />
                         </FormControl>
-                        {/* form message */}
                         <FormMessage />
                       </FormItem>
                     );
@@ -137,6 +95,7 @@ const CreateServerModalContent = ({
                       </FormLabel>
                       <FormControl>
                         <Input
+                          autoFocus={true}
                           disabled={isLoading}
                           className=" border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="Enter Server Name"
@@ -151,7 +110,13 @@ const CreateServerModalContent = ({
             </div>
             <DialogFooter className="px-6 py-4">
               <Button disabled={isLoading} className="" variant={"primary"}>
-                {isLoading ? "Creating.." : "Create"}
+                {type === "createServer"
+                  ? isLoading
+                    ? "Creating.."
+                    : "Create"
+                  : type === "editServer" && isLoading
+                  ? "Updating.."
+                  : "update"}
               </Button>
             </DialogFooter>
           </form>
@@ -161,4 +126,4 @@ const CreateServerModalContent = ({
   );
 };
 
-export default CreateServerModalContent;
+export default ServerModalContent;

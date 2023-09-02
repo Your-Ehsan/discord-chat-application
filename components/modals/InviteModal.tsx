@@ -14,7 +14,8 @@ import { Button } from "../ui/button";
 import { CheckIcon, CopyIcon, SymbolIcon } from "@radix-ui/react-icons";
 import { useOrigin } from "@/hooks/useOrigin";
 import { useState } from "react";
-import axios from "axios";
+import { copyInviteLink } from "@/lib/actions/copyInviteLink";
+import { generateNewInviteLink } from "@/lib/actions/generateNewInviteLink";
 
 const InviteModal = () => {
   const [Loading, setLoading] = useState<boolean>(false),
@@ -26,47 +27,44 @@ const InviteModal = () => {
     origin: string = useOrigin(),
     inviteLink: string = `${origin}/invite/${server?.inviteCode}`;
 
-  const onCopy: () => Promise<void> = async () => {
-    try {
-      await navigator.clipboard.writeText(inviteLink);
-      setCopy(true);
-      setTimeout(() => {
-        setCopy(false);
-      }, 1200);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setCopy(false);
-    }
-  };
+  // const onCopy: () => Promise<void> = async () => {
+  //   try {
+  //     await navigator.clipboard.writeText(inviteLink);
+  //     setCopy(true);
+  //     setTimeout(() => {
+  //       setCopy(false);
+  //     }, 1200);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setCopy(false);
+  //   }
+  // };
 
-  const onGenerate = async () => {
-    try {
-      setLoading(true);
-      const res = await axios
-        .patch(`/api/servers/${server?.id}/invite`)
-        .then(({ data }) => {
-          onOpen("invite", { server: data });
-        });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const onGenerate: () => Promise<void> = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const res = await axios
+  //       .patch(`/api/servers/${server?.id}/invite`)
+  //       .then(({ data }) => {
+  //         onOpen("invite", { server: data });
+  //       });
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   return (
     <Dialog open={IsModalOPen} onOpenChange={onClose}>
       <DialogContent className="p-8 overflow-hidden">
-        {/* Dilaof Header */}
         <DialogHeader className="pt-8 px-6">
-          {/* Title */}
           <DialogTitle className="text-2xl">Invite Your Friends!</DialogTitle>
-          {/* Description */}
           <DialogDescription className="text-zinc-500">
             Share your server with your friends and family.
           </DialogDescription>
         </DialogHeader>
-        {/* Invite Modal content */}
         <div className="p-6">
           <Label className="uppercase text-xs font-bold">
             Server invite link
@@ -74,7 +72,9 @@ const InviteModal = () => {
           <div className="flex items-center mt-2 gap-x-2">
             <Input
               disabled={Loading}
-              className="bg-zinc-300/50 border-0 focus-visible:ring-0 font-mono focus-visible:ring-offset-0"
+              className="border-0 focus-visible:ring-0
+              focus-visible:ring-offset-0
+              font-mono"
               value={inviteLink}
               readOnly={true}
             />
@@ -82,7 +82,7 @@ const InviteModal = () => {
               disabled={Loading}
               size={"icon"}
               variant={"default"}
-              onClick={async () => await onCopy()}
+              onClick={async () => await copyInviteLink(inviteLink, setCopy)}
             >
               {Copy ? (
                 <CheckIcon className="h-4 w-4 " />
@@ -96,7 +96,9 @@ const InviteModal = () => {
             variant={"link"}
             size={"sm"}
             className="text-xs text-zinc-500 mt-2"
-            onClick={async () => await onGenerate()}
+            onClick={async () =>
+              await generateNewInviteLink(setLoading, onOpen, server?.id)
+            }
           >
             Generate New
             <SymbolIcon

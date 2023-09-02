@@ -19,6 +19,7 @@ const page = async ({ params }: { params: { inviteCode: string } }) => {
       },
     },
   });
+  
   if (isServerExist) return redirect(`/servers/${isServerExist.id}`);
 
   const server = await db.server.update({
@@ -35,7 +36,9 @@ const page = async ({ params }: { params: { inviteCode: string } }) => {
       },
     },
   });
-  return <div>page</div>;
+
+  if (server) return redirect(`/servers/${server.id}`);
+  return null; // TODO: Add a confirmation modal
 };
 
 export default page;
