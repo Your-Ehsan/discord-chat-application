@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { CreateChannelSchema, serverModalformSchema } from "../schemas";
-import { Channel, Member, Profile, Server } from "@prisma/client";
+import { Channel, ChannelType, Member, Profile, Server } from "@prisma/client";
 import { UseFormReturn } from "react-hook-form";
 
 export type DBprofile = {
@@ -38,10 +38,14 @@ export type ModalType =
   | "members"
   | "createChannel"
   | "leaveServer"
-  | "deleteServer";
+  | "deleteServer"
+  | "deleteChannel"
+  | "editChannel";
 
 export type ModalData = {
   server?: Server | null;
+  channelType?: ChannelType | undefined;
+  channel?: Channel | undefined;
 };
 
 export type ModalStore = {

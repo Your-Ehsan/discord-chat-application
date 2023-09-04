@@ -6,17 +6,18 @@ import { Dispatch, SetStateAction } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import { ChannelType } from "@prisma/client";
 
-const createChannel = async (
+const editChannel = async (
   { name, type }: CreateChannelTypes,
-  serverId: string | string[],
-  form: UseFormReturn<
-    {
-      type: ChannelType;
-      name: string;
-    },
-    any,
-    undefined
-  >,
+  serverId: string | undefined,
+  channelId: string | undefined,
+//   form: UseFormReturn<
+//     {
+//       type: ChannelType;
+//       name: string;
+//     },
+//     any,
+//     undefined
+//   >,
   Router: AppRouterInstance,
   onClose: () => void,
   setLoading: Dispatch<SetStateAction<boolean>>,
@@ -24,9 +25,9 @@ const createChannel = async (
   try {
     setLoading(true);
     await axios
-      .post(
+      .patch(
         qs.stringifyUrl({
-          url: "/api/channels",
+          url: `/api/channels/${channelId}/update`,
           query: {
             serverId: serverId,
           },
@@ -34,7 +35,7 @@ const createChannel = async (
         { name, type },
       )
       .then(() => {
-        form.reset();
+        // form.reset();
         Router.refresh();
         setLoading(false);
         onClose();
@@ -46,4 +47,4 @@ const createChannel = async (
   }
 };
 
-export { createChannel };
+export { editChannel };

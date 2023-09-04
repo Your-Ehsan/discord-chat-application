@@ -25,7 +25,7 @@ const serverIdLayout = async ({
       },
     },
   });
-  
+
   if (!server) redirect("/");
   return (
     <section className="h-full">

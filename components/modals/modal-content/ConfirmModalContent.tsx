@@ -17,6 +17,7 @@ type ConfirmModalContentProps = {
   modalActionBtn: () => Promise<void>;
   modalEndline: string;
   Loading: boolean;
+  modalName: string | undefined;
 };
 
 const ConfirmModalContent = ({
@@ -26,9 +27,9 @@ const ConfirmModalContent = ({
   modalEndline,
   Loading,
   IsModalOPen,
+  modalName,
 }: ConfirmModalContentProps) => {
-  const { isOpen, onClose, type, data } = useModalStore(),
-    { server } = data;
+  const { onClose } = useModalStore();
 
   return (
     <Dialog open={IsModalOPen} onOpenChange={onClose}>
@@ -38,14 +39,14 @@ const ConfirmModalContent = ({
             {modalAction} {modalType}?
           </DialogTitle>
           <DialogDescription className="text-zinc-500 capitalize">
-            {!server ? (
+            {!modalName ? (
               <span>
                 are you sure you want to {modalAction} this {modalType}?
               </span>
             ) : (
               <span>
                 Are you sure you want to {modalAction} this{" "}
-                <span className="font-bold">{server.name}</span> {modalType}?
+                <span className="font-bold">{modalName}</span> {modalType}?
               </span>
             )}
           </DialogDescription>
@@ -64,7 +65,7 @@ const ConfirmModalContent = ({
               <Button
                 disabled={Loading}
                 className="ml-2 flex items-center duration-300"
-                variant={"primary"}
+                variant={"destructive"}
                 onClick={modalActionBtn}
               >
                 {Loading ? (

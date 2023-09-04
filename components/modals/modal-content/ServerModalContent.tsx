@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ModalType, ServerFormType } from "@/lib/types";
+import { Loader2 } from "lucide-react";
 
 const ServerModalContent = ({
   isOpen,
@@ -110,13 +111,32 @@ const ServerModalContent = ({
             </div>
             <DialogFooter className="px-6 py-4">
               <Button disabled={isLoading} className="" variant={"primary"}>
-                {type === "createServer"
+                {/* {type === "createServer"
                   ? isLoading
                     ? "Creating.."
                     : "Create"
                   : type === "editServer" && isLoading
                   ? "Updating.."
-                  : "update"}
+                  : "update"} */}
+                {type === "createServer" ? (
+                  isLoading ? (
+                    <>
+                      <span>Creating</span>
+                      <Loader2 className="animate-spin h-4 w-4 mx-2 transition-all" />
+                    </>
+                  ) : (
+                    <span>Create</span>
+                  )
+                ) : type === "editServer" ? (
+                  isLoading ? (
+                    <>
+                      <span>Editing</span>
+                      <Loader2 className="animate-spin h-4 w-4 mx-2 transition-all" />
+                    </>
+                  ) : (
+                    <span>Edit</span>
+                  )
+                ) : null}
               </Button>
             </DialogFooter>
           </form>

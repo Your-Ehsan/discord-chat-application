@@ -20,7 +20,6 @@ const SidebarNavigationItems = ({
     <ActionTooltip side="right" align="center" label={name}>
       <Link href={`/servers/${id}`}>
         <button
-          // onClick={() => Router.push(`/servers/${id}`)}
           className="group relative flex items-center my-3"
         >
           <div

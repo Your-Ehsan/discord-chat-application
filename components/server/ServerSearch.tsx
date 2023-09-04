@@ -1,5 +1,4 @@
 "use client";
-
 import { ReactNode, useEffect, useState } from "react";
 import Icon from "../Icon";
 import {
@@ -12,7 +11,6 @@ import {
 } from "../ui/command";
 import { useParams, useRouter } from "next/navigation";
 import { serverCollectionType } from "@/lib/types";
-
 
 type ServerSearchProps = {
   data: {

@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { serverModalformSchema } from "@/lib/schemas";
 import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createServer } from "@/lib/actions/createServer";
 import { useRouter } from "next/navigation";
 import { editServer } from "@/lib/actions/editServer";
 

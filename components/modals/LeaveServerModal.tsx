@@ -15,6 +15,7 @@ const LeaveServerModal = () => {
 
   return (
     <ConfirmModalContent
+      modalName={server?.name}
       IsModalOPen={IsModalOPen}
       Loading={Loading}
       modalAction="leave"

@@ -1,8 +1,10 @@
+import qs from "query-string";
 import axios from "axios";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import { Dispatch, SetStateAction } from "react";
 
-const leaveServer = async (
+const deleteChannel = async (
+  channelId: string | undefined,
   serverId: string | undefined,
   Router: AppRouterInstance,
   onClose: () => void,
@@ -11,17 +13,24 @@ const leaveServer = async (
   try {
     setLoding(true);
     await axios
-      .patch(`/api/servers/${serverId}/leave`, { serverId: serverId })
+      .delete(
+        qs.stringifyUrl({
+          url: `/api/channels/${channelId}/delete`,
+          query: {
+            serverId: serverId,
+          },
+        }),
+      )
       .then(() => {
-        Router.refresh();
-        setLoding(false);
         onClose();
+        setLoding(false);
+        Router.refresh();
       });
   } catch (error) {
-    console.log(`error while deleting user from database --> ${error}`);
+    console.log(`error while deleting the whole server --> ${error}`);
   } finally {
     setLoding(false);
   }
 };
 
-export { leaveServer };
+export { deleteChannel };
