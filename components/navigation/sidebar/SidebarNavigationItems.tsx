@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useParams, useRouter } from "next/navigation";
-import ActionTooltip from "../tooltips/ActionTooltip";
+import ActionTooltip from "../../tooltips/ActionTooltip";
 import Image from "next/image";
 import Link from "next/link";
 

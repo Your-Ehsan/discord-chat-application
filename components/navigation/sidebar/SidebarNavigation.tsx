@@ -1,6 +1,6 @@
 import currentProfile from "@/lib/currentProfile";
-import SidebarNavigationAction from "@/components/navigation/SidebarNavigationAction";
-import SidebarNavigationItems from "@/components/navigation/SidebarNavigationItems";
+import SidebarNavigationAction from "@/components/navigation/sidebar/SidebarNavigationAction";
+import SidebarNavigationItems from "@/components/navigation/sidebar/SidebarNavigationItems";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { Separator } from "@/components/ui/separator";

@@ -5,6 +5,7 @@ import { Member, MemberRole, Profile } from "@prisma/client";
 import { Shield, User } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import UserAvatar from "../UserAvatar";
+import Link from "next/link";
 
 type ServerMembersProps = {
   member: Member & { profile: Profile };
@@ -22,6 +23,7 @@ const ServerMembers = ({ member, server }: ServerMembersProps) => {
     Param = useParams(),
     icon = roleIcon[member.role];
   return (
+    <Link href={`/servers/${server?.id}/chats/${member?.id}`}>
     <button
       className={cn(
         "group p-2 rounded-md flex items-center gap-x-2 w-full hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition-all mb-1",
@@ -35,7 +37,7 @@ const ServerMembers = ({ member, server }: ServerMembersProps) => {
       <span
         className={cn(
           "font-semibold text-sm text-zinc-400 dark:group-hover:text-zinc-300 transition-all",
-          Param?.channelId === member.id &&
+          Param?.memberId === member.id &&
             "text-primary dark:text-zinc-200 dark:group-hover:text-white",
         )}
       >
@@ -43,6 +45,8 @@ const ServerMembers = ({ member, server }: ServerMembersProps) => {
       </span>
       {icon}
     </button>
+    </Link>
+
   );
 };
 

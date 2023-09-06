@@ -48,7 +48,7 @@ const ServerModalContent = ({
         }
       }}
     >
-      <DialogContent className="p-8 overflow-hidden">
+      <DialogContent showicon={false} className="p-8 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-3xl capitalize">
             {type === "createServer"
@@ -111,13 +111,6 @@ const ServerModalContent = ({
             </div>
             <DialogFooter className="px-6 py-4">
               <Button disabled={isLoading} className="" variant={"primary"}>
-                {/* {type === "createServer"
-                  ? isLoading
-                    ? "Creating.."
-                    : "Create"
-                  : type === "editServer" && isLoading
-                  ? "Updating.."
-                  : "update"} */}
                 {type === "createServer" ? (
                   isLoading ? (
                     <>

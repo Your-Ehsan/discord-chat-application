@@ -1,7 +1,7 @@
 "use client";
 
-import { useModalStore } from "@/hooks/useModalStore";
 import ServerModalContent from "./modal-content/ServerModalContent";
+import { useModalStore } from "@/hooks/useModalStore";
 import { serverModalformValuesTypes } from "@/lib/types";
 import { useForm } from "react-hook-form";
 import { serverModalformSchema } from "@/lib/schemas";

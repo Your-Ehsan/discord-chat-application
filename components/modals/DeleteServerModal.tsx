@@ -1,3 +1,4 @@
+'use client'
 import { useModalStore } from "@/hooks/useModalStore";
 import { useState } from "react";
 import { useRouter } from "next/navigation";

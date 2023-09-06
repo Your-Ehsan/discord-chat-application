@@ -5,6 +5,7 @@ import "@uploadthing/react/styles.css";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Cross1Icon } from "@radix-ui/react-icons";
+import { FileIcon } from "lucide-react";
 
 type FileUploadProps = {
   onChange: (url?: string) => void;
@@ -38,6 +39,27 @@ const FileUpload = ({ endpoint, value, onChange }: FileUploadProps) => {
           </Button>
         </div>
       </>
+    );
+  }
+  if (value && fileType === "pdf") {
+    return (
+      <div className="relative flex items-center p-2 mt-2 rounded-md bg-background/10">
+        <FileIcon className="h-10 w-10 fill-indigo-200 stroke-indigo-400" />
+        <a href={value} target="_blank" rel="noopener noreferrer">
+          {value}
+        </a>
+        <Button
+            title="Remove Image"
+            onClick={() => onChange("")}
+            className={
+              "bg-rose-400 text-white p-1 rounded-full absolute -top-2 -right-2 shadow w-6 h-6"
+            }
+            type="button"
+          >
+            <Cross1Icon className={"h-4 w-4"} />
+          </Button>
+        
+      </div>
     );
   }
   return (

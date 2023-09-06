@@ -31,3 +31,24 @@ export const CreateChannelSchema = z.object({
       message: "Channel name cannot be general",
     }),
 });
+
+/**
+ * schema for input to send message in
+ * chat or shannel section
+ */
+
+export const ChatInputSchema = z.object({
+  content: z.string().min(1, { message: "empty message are not sendable" }),
+  // fileUrl: z.string().optional()
+});
+
+/**
+ * schema for input to send message in
+ * chat or shannel section
+ */
+// TODO: make this form better with some better user experience
+export const FileInputSchema = z.object({
+  fileUrl: z.string().url({
+    message: "image url is not valid",
+  }),
+});

@@ -8,7 +8,7 @@ import { ChannelType } from "@prisma/client";
 
 const createChannel = async (
   { name, type }: CreateChannelTypes,
-  serverId: string | string[],
+  serverId: string | string[] | undefined,
   form: UseFormReturn<
     {
       type: ChannelType;

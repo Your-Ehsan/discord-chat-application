@@ -5,6 +5,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
 import ModalsProvider from "@/components/providers/ModalsProvider";
+import SocketProvider from "@/components/providers/SocketProvider";
+import QueryProvider from "@/components/providers/QueryProvider";
 
 export const metadata: Metadata = {
   title: siteConfigs.title,
@@ -26,8 +28,10 @@ export default function RootLayout({
             storageKey="discord-theme"
             enableSystem
           >
-            <ModalsProvider />
-            {children}
+            <SocketProvider>
+              <ModalsProvider />
+              <QueryProvider>{children}</QueryProvider>
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>

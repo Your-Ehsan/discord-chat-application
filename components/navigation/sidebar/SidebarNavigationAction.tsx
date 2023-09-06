@@ -1,7 +1,7 @@
 "use client";
 
 import { PlusIcon } from "@radix-ui/react-icons";
-import ActionTooltip from "../tooltips/ActionTooltip";
+import ActionTooltip from "../../tooltips/ActionTooltip";
 import { useModalStore } from "@/hooks/useModalStore";
 
 const SidebarNavigationAction = () => {

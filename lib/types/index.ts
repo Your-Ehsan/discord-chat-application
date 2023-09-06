@@ -1,6 +1,21 @@
+import { Server as NetServer, Socket } from "net";
+import { NextApiResponse } from "next";
+import { Server as socketServer } from "socket.io";
 import { z } from "zod";
-import { CreateChannelSchema, serverModalformSchema } from "../schemas";
-import { Channel, ChannelType, Member, Profile, Server } from "@prisma/client";
+import {
+  ChatInputSchema,
+  CreateChannelSchema,
+  FileInputSchema,
+  serverModalformSchema,
+} from "../schemas";
+import {
+  Channel,
+  ChannelType,
+  Member,
+  Message,
+  Profile,
+  Server,
+} from "@prisma/client";
 import { UseFormReturn } from "react-hook-form";
 
 export type DBprofile = {
@@ -40,12 +55,15 @@ export type ModalType =
   | "leaveServer"
   | "deleteServer"
   | "deleteChannel"
-  | "editChannel";
+  | "editChannel"
+  | "messageFile";
 
 export type ModalData = {
   server?: Server | null;
   channelType?: ChannelType | undefined;
   channel?: Channel | undefined;
+  apiUrl?: string;
+  query?: Record<string, any>;
 };
 
 export type ModalStore = {
@@ -57,3 +75,23 @@ export type ModalStore = {
 };
 
 export type serverCollectionType = "channel" | "member";
+
+export type chatType = "channel" | "chat";
+export type chatParamKey = "channelId" | "chatId";
+
+export type NextApiResponseSocketServer = NextApiResponse & {
+  socket: Socket & {
+    server: NetServer & {
+      io: socketServer;
+    };
+  };
+};
+
+export type ChatInputSchemaType = z.infer<typeof ChatInputSchema>;
+export type FileInputSchemaType = z.infer<typeof FileInputSchema>;
+
+export type MessageWithMember_Profile = Message & {
+  member: Member & {
+    profile: Profile;
+  };
+};
