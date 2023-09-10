@@ -13,7 +13,7 @@ import Icon from "@/components/Icon";
 type ConfirmModalContentProps = {
   IsModalOPen: boolean;
   modalAction: "leave" | "delete";
-  modalType: "server" | "channel";
+  modalType: "server" | "channel" | "message";
   modalActionBtn: () => Promise<void>;
   modalEndline: string;
   Loading: boolean;
