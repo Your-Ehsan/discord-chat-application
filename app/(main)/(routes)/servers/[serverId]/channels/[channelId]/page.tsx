@@ -1,3 +1,4 @@
+import MediaRoom from "@/components/MediaRoom";
 import ChatHeader from "@/components/chat/ChatHeader";
 import ChatInput from "@/components/chat/ChatInput";
 import ChatMessages from "@/components/chat/ChatMessages";
@@ -43,29 +44,39 @@ const page = async ({
         type="channel"
         name={channel.name}
       />
-      <ChatMessages
-        apiUrl="/api/messages" // TODO: This need to be done
-        name={channel.name}
-        type="channel"
-        chatId={channel.id}
-        member={member}
-        paramKey="channelId"
-        paramValue={channel.id}
-        socketQuery={{
-          channelId: channel.id,
-          serverId: channel.serverId,
-        }}
-        socketUrl="/api/socket/messages"
-      />
-      <ChatInput
-        name={channel.name}
-        type="channel"
-        apiUrl="/api/socket/messages"
-        query={{
-          channelId: channel.id,
-          serverId: channel.serverId,
-        }}
-      />
+      {channel.type === "TEXT" && (
+        <>
+          <ChatMessages
+            apiUrl="/api/messages"
+            name={channel.name}
+            type="channel"
+            chatId={channel.id}
+            member={member}
+            paramKey="channelId"
+            paramValue={channel.id}
+            socketQuery={{
+              channelId: channel.id,
+              serverId: channel.serverId,
+            }}
+            socketUrl="/api/socket/messages"
+          />
+          <ChatInput
+            name={channel.name}
+            type="channel"
+            apiUrl="/api/socket/messages"
+            query={{
+              channelId: channel.id,
+              serverId: channel.serverId,
+            }}
+          />
+        </>
+      )}
+      {channel.type === "AUDIO" && (
+        <MediaRoom audio={true} chatId={channel.id} video={false} />
+      )}
+      {channel.type === "VIDEO" && (
+        <MediaRoom audio={true} chatId={channel.id} video={true} />
+      )}
     </div>
   );
 };

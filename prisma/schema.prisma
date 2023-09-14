@@ -17,7 +17,7 @@ model Profile {
   name     String
   imageUrl String @db.Text
   email    String @db.Text
-  username String @db.Text 
+  username String @db.Text
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -138,6 +138,8 @@ model DirectChat {
 
   chatId String
   chat   Chat   @relation(fields: [chatId], references: [id], onDelete: Cascade)
+
+  deleted Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

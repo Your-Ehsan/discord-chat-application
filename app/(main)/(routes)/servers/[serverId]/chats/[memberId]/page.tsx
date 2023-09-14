@@ -1,3 +1,4 @@
+import MediaRoom from "@/components/MediaRoom";
 import ChatHeader from "@/components/chat/ChatHeader";
 import ChatInput from "@/components/chat/ChatInput";
 import ChatMessages from "@/components/chat/ChatMessages";
@@ -9,8 +10,10 @@ import { redirect } from "next/navigation";
 
 const page = async ({
   params,
+  searchParams,
 }: {
   params: { memberId: string; serverId: string };
+  searchParams: { video?: boolean };
 }) => {
   const profile = await currentProfile();
 
@@ -50,27 +53,34 @@ const page = async ({
         serverId={params.serverId}
         imageUrl={otherMember.profile.imageUrl}
       />
-      <ChatMessages
-        name={otherMember.profile.name}
-        type="chat"
-        apiUrl="/api/directMessages"
-        chatId={conversation.id}
-        member={currentMember}
-        paramKey="chatId"
-        paramValue={conversation.id}
-        socketQuery={{
-          conversationId: conversation.id,
-        }}
-        socketUrl="/api/socket/directMessages"
-      />
-      <ChatInput
-        apiUrl="/api/socket/directMessages"
-        name={otherMember.profile.name}
-        type="chat"
-        query={{
-          conversationId: conversation.id,
-        }}
-      />
+      {searchParams?.video && (
+        <MediaRoom video={true} audio={true} chatId={conversation.id} />
+      )}
+      {!searchParams?.video && (
+        <>
+          <ChatMessages
+            name={otherMember.profile.name}
+            type="chat"
+            apiUrl="/api/directMessages"
+            chatId={conversation.id}
+            member={currentMember}
+            paramKey="chatId"
+            paramValue={conversation.id}
+            socketQuery={{
+              conversationId: conversation.id,
+            }}
+            socketUrl="/api/socket/directMessages"
+          />
+          <ChatInput
+            apiUrl="/api/socket/directMessages"
+            name={otherMember.profile.name}
+            type="chat"
+            query={{
+              conversationId: conversation.id,
+            }}
+          />
+        </>
+      )}
     </div>
   );
 };

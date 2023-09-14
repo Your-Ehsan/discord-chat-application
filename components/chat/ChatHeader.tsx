@@ -3,6 +3,7 @@ import { Hash } from "lucide-react";
 import MobileToggle from "../MobileToggle";
 import UserAvatar from "../UserAvatar";
 import SocketIndicator from "../SocketIndicator";
+import ChatVideoBtn from "./ChatVideoBtn";
 
 type ChatHeaderProps = {
   serverId: string;
@@ -25,6 +26,7 @@ const ChatHeader = ({ name, serverId, type, imageUrl }: ChatHeaderProps) => {
         {name}
       </span>
       <div className="ml-auto flex items-center">
+        {type === "chat" && <ChatVideoBtn />}
         <SocketIndicator />
       </div>
     </div>

@@ -63,6 +63,7 @@ const GET = async (req: Request) => {
       items: messages,
       nextCursor: nextCursor,
     });
+    
   } catch (error) {
     const _error: string = `Getting error while fetching the messages ${error}`;
     console.log(_error);
