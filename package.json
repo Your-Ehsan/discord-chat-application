@@ -39,7 +39,7 @@
     "date-fns": "^2.30.0",
     "emoji-mart": "^5.5.2",
     "eslint": "8.47.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-config-next": "14.0.2",
     "livekit-client": "^1.13.3",
     "livekit-server-sdk": "^1.2.6",
     "lucide-react": "^0.268.0",
