@@ -1,11 +1,12 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@tanstack/eslint-plugin-query/recommended"
-  ],
-  "plugins": ["@tanstack/query"],
-  "rules": {
-    "@tanstack/query/exhaustive-deps": "error",
-    "@tanstack/query/prefer-query-object-syntax": "error"
-  }
+  "extends": 
+  // [
+    "next/core-web-vitals"
+    // "plugin:@tanstack/eslint-plugin-query/recommended"
+  // ]
+  // "plugins": ["@tanstack/query"],
+  // "rules": {
+  //   "@tanstack/query/exhaustive-deps": "error",
+  //   "@tanstack/query/prefer-query-object-syntax": "error"
+  // }
 }
