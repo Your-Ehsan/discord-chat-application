@@ -40,4 +40,4 @@ next-env.d.ts
 # examples
 /examples
 
-supabase-secret.txt
+/supabase-secret.txt
