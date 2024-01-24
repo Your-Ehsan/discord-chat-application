@@ -38,7 +38,7 @@
     "cmdk": "^0.2.0",
     "date-fns": "^3.0.6",
     "emoji-mart": "^5.5.2",
-    "eslint": "8.55.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "livekit-client": "^1.15.5",
     "livekit-server-sdk": "^1.2.7",
