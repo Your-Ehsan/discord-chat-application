@@ -64,7 +64,7 @@
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.14.6",
     "@types/node": "20.10.6",
-    "@types/react": "18.2.41",
+    "@types/react": "18.2.48",
     "@types/uuid": "^9.0.7",
     "prisma": "^5.8.1",
     "typescript": "5.3.3"
