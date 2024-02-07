@@ -65,7 +65,7 @@
     "@tanstack/eslint-plugin-query": "^5.18.1",
     "@types/node": "20.10.6",
     "@types/react": "18.2.48",
-    "@types/uuid": "^9.0.7",
+    "@types/uuid": "^9.0.8",
     "prisma": "^5.9.1",
     "typescript": "5.3.3"
   }
