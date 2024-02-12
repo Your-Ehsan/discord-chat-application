@@ -13,7 +13,7 @@
     "@clerk/themes": "^1.7.9",
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
-    "@hookform/resolvers": "^3.3.2",
+    "@hookform/resolvers": "^3.3.4",
     "@livekit/components-react": "^1.4.0",
     "@livekit/components-styles": "^1.0.9",
     "@prisma/client": "^5.9.1",
