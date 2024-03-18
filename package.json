@@ -31,7 +31,7 @@
     "@tanstack/react-query": "^5.13.4",
     "@types/react-dom": "18.2.21",
     "@uploadthing/react": "^5.7.0",
-    "autoprefixer": "10.4.17",
+    "autoprefixer": "10.4.18",
     "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
