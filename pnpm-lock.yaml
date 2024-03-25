@@ -22,7 +22,7 @@ dependencies:
     version: 3.3.4(react-hook-form@7.50.1)
   '@livekit/components-react':
     specifier: ^1.4.0
-    version: 1.4.0(livekit-client@1.15.12)(react-dom@18.2.0)(react@18.2.0)(tslib@2.6.2)
+    version: 1.4.0(livekit-client@1.15.13)(react-dom@18.2.0)(react@18.2.0)(tslib@2.6.2)
   '@livekit/components-styles':
     specifier: ^1.0.9
     version: 1.0.9
@@ -99,8 +99,8 @@ dependencies:
     specifier: 14.0.4
     version: 14.0.4(eslint@8.57.0)(typescript@5.4.2)
   livekit-client:
-    specifier: ^1.15.12
-    version: 1.15.12
+    specifier: ^1.15.13
+    version: 1.15.13
   livekit-server-sdk:
     specifier: ^2.0.0
     version: 2.0.0
@@ -441,7 +441,7 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: false
 
-  /@livekit/components-core@0.8.0(livekit-client@1.15.12)(tslib@2.6.2):
+  /@livekit/components-core@0.8.0(livekit-client@1.15.13)(tslib@2.6.2):
     resolution: {integrity: sha512-nfJO5BBKR1hvkImsErxl7EwSJMXcZ0xSpHT42sevUeL5VKVYUj5YJFuhOs/xUMx06kBSDNMGHNsjRvbYgLFv0w==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -450,13 +450,13 @@ packages:
     dependencies:
       '@floating-ui/dom': 1.5.3
       email-regex: 5.0.0
-      livekit-client: 1.15.12
+      livekit-client: 1.15.13
       loglevel: 1.8.1
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
 
-  /@livekit/components-react@1.4.0(livekit-client@1.15.12)(react-dom@18.2.0)(react@18.2.0)(tslib@2.6.2):
+  /@livekit/components-react@1.4.0(livekit-client@1.15.13)(react-dom@18.2.0)(react@18.2.0)(tslib@2.6.2):
     resolution: {integrity: sha512-hcJWM/E9rqa1KH76nLVlbL6twM5W/xUwobSOGwklCxih4D575qd9XWB3hlOHqHL0h1FIvzuhOJgyJ8NXoRpucA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -465,10 +465,10 @@ packages:
       react-dom: '>=18'
       tslib: ^2.6.2
     dependencies:
-      '@livekit/components-core': 0.8.0(livekit-client@1.15.12)(tslib@2.6.2)
+      '@livekit/components-core': 0.8.0(livekit-client@1.15.13)(tslib@2.6.2)
       '@react-hook/latest': 1.0.3(react@18.2.0)
       clsx: 2.0.0
-      livekit-client: 1.15.12
+      livekit-client: 1.15.13
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tslib: 2.6.2
@@ -3502,8 +3502,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: false
 
-  /livekit-client@1.15.12:
-    resolution: {integrity: sha512-1mjVFNOkF7f0HHAY1Z9zZw38eCxA2xCULah5z8whPkb61kG4LJU0aNCo9LWjAynO4ODLjfq2+fZvZoCHIya+6A==}
+  /livekit-client@1.15.13:
+    resolution: {integrity: sha512-0oPyZvQ8RK/Gi7Hhmg1hIHM5qpGbkpVtjGC2J1AZlNs41Bp45bU9sgCWRVZ+nd++vDSWEOR/lXiHE8sXPgcFTA==}
     dependencies:
       '@bufbuild/protobuf': 1.4.2
       events: 3.3.0
