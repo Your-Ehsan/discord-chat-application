@@ -45,7 +45,7 @@
     "lucide-react": "^0.340.0",
     "next": "14.0.3",
     "next-themes": "^0.2.1",
-    "postcss": "8.4.35",
+    "postcss": "8.4.38",
     "query-string": "^9.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
