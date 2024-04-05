@@ -102,8 +102,8 @@ dependencies:
     specifier: ^1.15.13
     version: 1.15.13
   livekit-server-sdk:
-    specifier: ^2.0.0
-    version: 2.0.0
+    specifier: ^2.1.2
+    version: 2.1.2
   lucide-react:
     specifier: ^0.340.0
     version: 0.340.0(react@18.2.0)
@@ -213,6 +213,10 @@ packages:
 
   /@bufbuild/protobuf@1.4.2:
     resolution: {integrity: sha512-JyEH8Z+OD5Sc2opSg86qMHn1EM1Sa+zj/Tc0ovxdwk56ByVNONJSabuCUbLQp+eKN3rWNfrho0X+3SEqEPXIow==}
+    dev: false
+
+  /@bufbuild/protobuf@1.8.0:
+    resolution: {integrity: sha512-qR9FwI8QKIveDnUYutvfzbC21UZJJryYrLuZGjeZ/VGz+vXelUkK+xgkOHsvPEdYEdxtgUUq4313N8QtOehJ1Q==}
     dev: false
 
   /@clerk/backend@0.38.3(react@18.2.0):
@@ -478,6 +482,12 @@ packages:
   /@livekit/components-styles@1.0.9:
     resolution: {integrity: sha512-rxsqp7KwblvW81OxcRa2KQZ+YZ8Arl8IBzG4k8X4HhA+sZRKxXrlGQJsvZlnAqc1EqIMQ7aMJTGRkLqcmXArMw==}
     engines: {node: '>=14'}
+    dev: false
+
+  /@livekit/protocol@1.12.0:
+    resolution: {integrity: sha512-AMUWxna4AO/biPaKiu45JYYVHi7sc+sK6pkeNNpqkzL85+eeHkNhkFfENn9YbQKQsVWABkOmcL8p4ZbUjxZkeQ==}
+    dependencies:
+      '@bufbuild/protobuf': 1.8.0
     dev: false
 
   /@next/env@14.0.3:
@@ -3515,11 +3525,11 @@ packages:
       webrtc-adapter: 8.2.3
     dev: false
 
-  /livekit-server-sdk@2.0.0:
-    resolution: {integrity: sha512-+8G/O5dVogCeB4Kt+c8MTck7CIEEIO3fIvd7oX7QcRAlCh5kBPl3ooHCixmOJ27b6wU2FCYkp1ySswDVCOqdiw==}
+  /livekit-server-sdk@2.1.2:
+    resolution: {integrity: sha512-ypevnVMsy5Sse2vR81BOx/P0PdV3NOj6kASkS4fyA/xiZEiFaOEa1SxJzREcs456hNGSiLkn/RrGcwk1ytaTuA==}
     engines: {node: '>=18'}
     dependencies:
-      '@bufbuild/protobuf': 1.4.2
+      '@livekit/protocol': 1.12.0
       camelcase-keys: 7.0.2
       jose: 5.2.2
     dev: false
