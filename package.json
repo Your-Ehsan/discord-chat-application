@@ -47,7 +47,7 @@
     "next-themes": "^0.2.1",
     "postcss": "8.4.38",
     "query-string": "^9.0.0",
-    "react": "18.2.0",
+    "react": "18.3.1",
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.50.1",
@@ -64,7 +64,7 @@
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.20.1",
     "@types/node": "20.10.6",
-    "@types/react": "18.2.48",
+    "@types/react": "18.3.1",
     "@types/uuid": "^9.0.8",
     "prisma": "^5.13.0",
     "typescript": "5.4.2"
