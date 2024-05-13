@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.0.11
     version: 1.0.11
   '@prisma/client':
-    specifier: ^5.10.2
-    version: 5.10.2(prisma@5.13.0)
+    specifier: ^5.13.0
+    version: 5.13.0(prisma@5.13.0)
   '@radix-ui/react-avatar':
     specifier: ^1.0.4
     version: 1.0.4(@types/react-dom@18.2.22)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.3.1)
@@ -596,8 +596,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@prisma/client@5.10.2(prisma@5.13.0):
-    resolution: {integrity: sha512-ef49hzB2yJZCvM5gFHMxSFL9KYrIP9udpT5rYo0CsHD4P9IKj473MbhU1gjKKftiwWBTIyrt9jukprzZXazyag==}
+  /@prisma/client@5.13.0(prisma@5.13.0):
+    resolution: {integrity: sha512-uYdfpPncbZ/syJyiYBwGZS8Gt1PTNoErNYMuqHDa2r30rNSFtgTA/LXsSk55R7pdRTMi5pHkeP9B14K6nHmwkg==}
     engines: {node: '>=16.13'}
     requiresBuild: true
     peerDependencies:
