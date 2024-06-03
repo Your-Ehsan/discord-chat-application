@@ -19,7 +19,7 @@ dependencies:
     version: 1.1.1(emoji-mart@5.6.0)(react@18.3.1)
   '@hookform/resolvers':
     specifier: ^3.3.4
-    version: 3.3.4(react-hook-form@7.50.1)
+    version: 3.3.4(react-hook-form@7.51.5)
   '@livekit/components-react':
     specifier: ^1.4.0
     version: 1.4.0(livekit-client@1.15.13)(react-dom@18.3.1)(react@18.3.1)(tslib@2.6.2)
@@ -129,8 +129,8 @@ dependencies:
     specifier: ^14.2.3
     version: 14.2.3(react@18.3.1)
   react-hook-form:
-    specifier: ^7.50.1
-    version: 7.50.1(react@18.3.1)
+    specifier: ^7.51.5
+    version: 7.51.5(react@18.3.1)
   socket.io:
     specifier: ^4.7.5
     version: 4.7.5
@@ -376,12 +376,12 @@ packages:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: false
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.50.1):
+  /@hookform/resolvers@3.3.4(react-hook-form@7.51.5):
     resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.50.1(react@18.3.1)
+      react-hook-form: 7.51.5(react@18.3.1)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -3745,8 +3745,8 @@ packages:
       react: 18.3.1
     dev: false
 
-  /react-hook-form@7.50.1(react@18.3.1):
-    resolution: {integrity: sha512-3PCY82oE0WgeOgUtIr3nYNNtNvqtJ7BZjsbxh6TnYNbXButaD5WpjOmTjdxZfheuHKR68qfeFnEDVYoSSFPMTQ==}
+  /react-hook-form@7.51.5(react@18.3.1):
+    resolution: {integrity: sha512-J2ILT5gWx1XUIJRETiA7M19iXHlG74+6O3KApzvqB/w8S5NQR7AbU8HVZrMALdmDgWpRPYiZJl0zx8Z4L2mP6Q==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
