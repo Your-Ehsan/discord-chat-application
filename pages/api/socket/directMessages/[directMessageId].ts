@@ -144,16 +144,4 @@ const handler = async (
   }
 };
 
-/**
- * secretKey --> VAvodkY96npwykHsku0LY2SfHouxj3iSzv1hv3VyxOC
- * API key --> APIJaopQGMUBo98
- * LiveKit web socket url --> wss://discord-t8sis6z0.livekit.cloud
- */
-
-/**
- * LIVEKIT_API_KEY=API6FPBLHaTa8sV
- *LIVEKIT_API_SECRET=Xow1rEtPTFeBJtDIem0jNuAg2Q1yo1a0a5dTZBHuVnX
- * NEXT_PUBLIC_LIVEKIT_URL=wss://discord-t8sis6z0.livekit.cloud
- */
-
 export default handler;
