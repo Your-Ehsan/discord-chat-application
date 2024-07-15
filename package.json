@@ -44,7 +44,7 @@
     "livekit-server-sdk": "^2.5.1",
     "lucide-react": "^0.402.0",
     "next": "14.2.3",
-    "next-themes": "^0.2.1",
+    "next-themes": "^0.3.0",
     "postcss": "8.4.38",
     "query-string": "^9.0.0",
     "react": "18.3.1",
