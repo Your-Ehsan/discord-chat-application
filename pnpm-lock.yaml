@@ -12,8 +12,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/themes':
-        specifier: ^2.1.8
-        version: 2.1.8
+        specifier: ^2.1.20
+        version: 2.1.20
       '@emoji-mart/data':
         specifier: ^1.1.2
         version: 1.1.2
@@ -236,12 +236,12 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/themes@2.1.8':
-    resolution: {integrity: sha512-fSKfhT2TKnvkJ71tNtu/CYZ1y9os7C5k87akIXrcm2oNu4W7wyWIjRdk4YGRm/kQ2ZsFvmUiQQdp4pz3jutWoA==}
+  '@clerk/themes@2.1.20':
+    resolution: {integrity: sha512-8dCVetxtFTUFDSlUIeHqFTGZf/FINSlspxZ51iOPXW6qtay73A1GmquHVfJAfBkGs8S26IO2L5wJytfRBUtkMQ==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/types@4.5.1':
-    resolution: {integrity: sha512-eLaH+IKnxgjGQhRZ5rhZA9pQszSKbtSZE5V6c3a/F2crlkYIFABrVdf1q6p5bSAEmcYdcV4u4kaEFZ5UpYNcOw==}
+  '@clerk/types@4.13.1':
+    resolution: {integrity: sha512-AfFTA1Du0pog62CSl23Y8NNDN+iHwXdUQAp/sQ/LbE+/wYBOMSaV5d+cS5F4HX+/uzXgKsc3BpCNI/Th3CLNHg==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.6.1':
@@ -2909,12 +2909,12 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@clerk/themes@2.1.8':
+  '@clerk/themes@2.1.20':
     dependencies:
-      '@clerk/types': 4.5.1
+      '@clerk/types': 4.13.1
       tslib: 2.4.1
 
-  '@clerk/types@4.5.1':
+  '@clerk/types@4.13.1':
     dependencies:
       csstype: 3.1.1
 
