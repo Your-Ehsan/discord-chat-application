@@ -42,7 +42,7 @@
     "eslint-config-next": "14.2.5",
     "livekit-client": "^1.15.13",
     "livekit-server-sdk": "^2.5.1",
-    "lucide-react": "^0.402.0",
+    "lucide-react": "^0.436.0",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "postcss": "8.4.38",
