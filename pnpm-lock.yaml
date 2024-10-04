@@ -105,8 +105,8 @@ importers:
         specifier: ^1.15.13
         version: 1.15.13
       livekit-server-sdk:
-        specifier: ^2.6.1
-        version: 2.6.1
+        specifier: ^2.6.2
+        version: 2.6.2
       lucide-react:
         specifier: ^0.445.0
         version: 0.445.0(react@18.3.1)
@@ -199,11 +199,11 @@ packages:
     resolution: {integrity: sha512-+BIznRzyqBf+2wCTxcKE3wDjfGeCoVE61KSHGpkzqrLi8qxqFwBeUFyId2cxkTmm55fzDGnm0+yCxaxygrLUnQ==}
     engines: {node: '>=6.9.0'}
 
+  '@bufbuild/protobuf@1.10.0':
+    resolution: {integrity: sha512-QDdVFLoN93Zjg36NoQPZfsVH9tZew7wKDKyV5qRdj8ntT4wQCOradQjRaTdwMhWUYsgKsvCINKKm87FdEk96Ag==}
+
   '@bufbuild/protobuf@1.4.2':
     resolution: {integrity: sha512-JyEH8Z+OD5Sc2opSg86qMHn1EM1Sa+zj/Tc0ovxdwk56ByVNONJSabuCUbLQp+eKN3rWNfrho0X+3SEqEPXIow==}
-
-  '@bufbuild/protobuf@1.8.0':
-    resolution: {integrity: sha512-qR9FwI8QKIveDnUYutvfzbC21UZJJryYrLuZGjeZ/VGz+vXelUkK+xgkOHsvPEdYEdxtgUUq4313N8QtOehJ1Q==}
 
   '@clerk/backend@1.2.4':
     resolution: {integrity: sha512-H6K1kHPaDFM6pBdwDAHh1jWSZxCWhGPzDmqgc7LByjqKS6RZUf3cs5mJkIXyopUpHY7wvwj50vSF0xJ46MEzNA==}
@@ -350,8 +350,8 @@ packages:
     resolution: {integrity: sha512-Hsxkfq240w0tMPtkQTHQotpkYfIY4lhP2pzegvOIIV/nYxj8LeRYypUjxJpFw3s6jQcV/WQS7oCYmFQdy98Jtw==}
     engines: {node: '>=18'}
 
-  '@livekit/protocol@1.19.1':
-    resolution: {integrity: sha512-PQYIuqRv++fRik9tKulJ0C0tT5O4cNviBA7OxwLTCBFDxJpve8ua8/JZ+nK+7r4j2KbLfVjsJYop9wcTCgRn7Q==}
+  '@livekit/protocol@1.23.0':
+    resolution: {integrity: sha512-Hh83moW437mWhiyRgoDMedJ/s/rCTfe3ACSaIJ3n2NlVaq/+BTuB/yH7a6alM1NEkGBSmgrEHxabDfozVUlgYg==}
 
   '@next/env@14.2.10':
     resolution: {integrity: sha512-dZIu93Bf5LUtluBXIv4woQw2cZVZ2DJTjax5/5DOs3lzEOeKLy7GxRSr4caK9/SCPdaW6bCgpye6+n4Dh9oJPw==}
@@ -1999,8 +1999,8 @@ packages:
   livekit-client@1.15.13:
     resolution: {integrity: sha512-0oPyZvQ8RK/Gi7Hhmg1hIHM5qpGbkpVtjGC2J1AZlNs41Bp45bU9sgCWRVZ+nd++vDSWEOR/lXiHE8sXPgcFTA==}
 
-  livekit-server-sdk@2.6.1:
-    resolution: {integrity: sha512-j/8TOlahIyWnycNkuSzTv6q+win4JTbDGNH48iMsZDMnJBks9hhC9UwAO4ES42sAorIAxGkrH58hxt4KdTkZaQ==}
+  livekit-server-sdk@2.6.2:
+    resolution: {integrity: sha512-3fFzHu7sAynUaUFTCKtRP9lgQCU0Qe/x7XA99GpT1ro7fTy1ZVzaWq34WcXEyUGBBMFxG19LlSIAQBcGZVStWQ==}
     engines: {node: '>=19'}
 
   locate-path@6.0.0:
@@ -2835,9 +2835,9 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.0
 
-  '@bufbuild/protobuf@1.4.2': {}
+  '@bufbuild/protobuf@1.10.0': {}
 
-  '@bufbuild/protobuf@1.8.0': {}
+  '@bufbuild/protobuf@1.4.2': {}
 
   '@clerk/backend@1.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -3006,9 +3006,9 @@ snapshots:
 
   '@livekit/components-styles@1.0.12': {}
 
-  '@livekit/protocol@1.19.1':
+  '@livekit/protocol@1.23.0':
     dependencies:
-      '@bufbuild/protobuf': 1.8.0
+      '@bufbuild/protobuf': 1.10.0
 
   '@next/env@14.2.10': {}
 
@@ -4812,9 +4812,9 @@ snapshots:
       typed-emitter: 2.1.0
       webrtc-adapter: 8.2.3
 
-  livekit-server-sdk@2.6.1:
+  livekit-server-sdk@2.6.2:
     dependencies:
-      '@livekit/protocol': 1.19.1
+      '@livekit/protocol': 1.23.0
       camelcase-keys: 9.1.3
       jose: 5.2.2
 
