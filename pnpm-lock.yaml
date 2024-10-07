@@ -105,8 +105,8 @@ importers:
         specifier: ^1.15.13
         version: 1.15.13
       livekit-server-sdk:
-        specifier: ^2.6.2
-        version: 2.6.2
+        specifier: ^2.7.0
+        version: 2.7.0
       lucide-react:
         specifier: ^0.445.0
         version: 0.445.0(react@18.3.1)
@@ -1596,6 +1596,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -1987,8 +1988,8 @@ packages:
   livekit-client@1.15.13:
     resolution: {integrity: sha512-0oPyZvQ8RK/Gi7Hhmg1hIHM5qpGbkpVtjGC2J1AZlNs41Bp45bU9sgCWRVZ+nd++vDSWEOR/lXiHE8sXPgcFTA==}
 
-  livekit-server-sdk@2.6.2:
-    resolution: {integrity: sha512-3fFzHu7sAynUaUFTCKtRP9lgQCU0Qe/x7XA99GpT1ro7fTy1ZVzaWq34WcXEyUGBBMFxG19LlSIAQBcGZVStWQ==}
+  livekit-server-sdk@2.7.0:
+    resolution: {integrity: sha512-UdP8FVIOrAJg9dhPNSWGAYV2ZlWFkSroYW3A2BKn8HMlaFMbuXjMouITiU4HuoiH/40/5gE6e+1YPj3aebdi4g==}
     engines: {node: '>=19'}
 
   locate-path@6.0.0:
@@ -4788,7 +4789,7 @@ snapshots:
       typed-emitter: 2.1.0
       webrtc-adapter: 8.2.3
 
-  livekit-server-sdk@2.6.2:
+  livekit-server-sdk@2.7.0:
     dependencies:
       '@livekit/protocol': 1.23.0
       camelcase-keys: 9.1.3
