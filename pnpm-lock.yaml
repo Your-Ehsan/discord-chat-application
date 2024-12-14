@@ -27,8 +27,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(livekit-client@1.15.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tslib@2.6.2)
       '@livekit/components-styles':
-        specifier: ^1.0.12
-        version: 1.0.12
+        specifier: ^1.1.4
+        version: 1.1.4
       '@prisma/client':
         specifier: ^5.18.0
         version: 5.18.0(prisma@5.20.0)
@@ -346,8 +346,8 @@ packages:
       react-dom: '>=18'
       tslib: ^2.6.2
 
-  '@livekit/components-styles@1.0.12':
-    resolution: {integrity: sha512-Hsxkfq240w0tMPtkQTHQotpkYfIY4lhP2pzegvOIIV/nYxj8LeRYypUjxJpFw3s6jQcV/WQS7oCYmFQdy98Jtw==}
+  '@livekit/components-styles@1.1.4':
+    resolution: {integrity: sha512-QCupn7tQ/dy/WZclrfsgtDe8peiGYS6Ied1IGkKOysaXo04l90t62SIUTKyxgd0dNDhUDC0p34qCggGZs/44lQ==}
     engines: {node: '>=18'}
 
   '@livekit/protocol@1.27.1':
@@ -2935,7 +2935,7 @@ snapshots:
       tslib: 2.6.2
       usehooks-ts: 2.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  '@livekit/components-styles@1.0.12': {}
+  '@livekit/components-styles@1.1.4': {}
 
   '@livekit/protocol@1.27.1':
     dependencies:
