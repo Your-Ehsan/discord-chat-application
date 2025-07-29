@@ -59,7 +59,7 @@
     "uploadthing": "^5.7.4",
     "uuid": "^11.1.0",
     "zod": "^3.25.67",
-    "zustand": "^5.0.3"
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.81.2",
