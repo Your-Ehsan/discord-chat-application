@@ -62,7 +62,7 @@
     "zustand": "^5.0.6"
   },
   "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^5.81.2",
+    "@tanstack/eslint-plugin-query": "^5.83.1",
     "@types/node": "24.0.3",
     "@types/react": "18.3.12",
     "@types/uuid": "^10.0.0",
