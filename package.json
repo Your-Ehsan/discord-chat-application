@@ -58,7 +58,7 @@
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^5.7.4",
     "uuid": "^11.1.0",
-    "zod": "^3.25.67",
+    "zod": "^4.0.17",
     "zustand": "^5.0.6"
   },
   "devDependencies": {
